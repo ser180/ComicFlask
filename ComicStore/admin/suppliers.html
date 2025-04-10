@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proveedores - Comic Store</title>
+    <link rel="stylesheet" href="../css/admin/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="admin-container">
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="Logo de Comic Store" class="logo-img">
+                    <span>ComicStore</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-content">
+                <nav class="sidebar-menu">
+                    <ul>
+                        <li class="menu-item">
+                            <a href="dashboard.html">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Panel de Control</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="products.html">
+                                <i class="fas fa-book"></i>
+                                <span>Productos</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="categories.html">
+                                <i class="fas fa-tags"></i>
+                                <span>Categorías</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="publishers.html">
+                                <i class="fas fa-building"></i>
+                                <span>Editoriales</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="orders.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Pedidos</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="customers.html">
+                                <i class="fas fa-users"></i>
+                                <span>Clientes</span>
+                            </a>
+                        </li>
+                        <li class="menu-item active">
+                            <a href="suppliers.html">
+                                <i class="fas fa-truck"></i>
+                                <span>Proveedores</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="supply-orders.html">
+                                <i class="fas fa-boxes"></i>
+                                <span>Órdenes de Suministro</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="users.html">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Usuarios</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <span>AD</span>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Usuario Admin</p>
+                        <p class="user-role">Administrador</p>
+                    </div>
+                </div>
+                <div class="logout-btn">
+                    <a href="login.html" title="Cerrar sesión">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <!-- Encabezado -->
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="page-title">Gestión de Proveedores</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-search">
+                        <input type="text" placeholder="Buscar proveedores...">
+                        <button>
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="header-actions">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <div class="user-dropdown">
+                            <button class="user-dropdown-toggle">
+                                <div class="user-avatar">
+                                    <span>AD</span>
+                                </div>
+                                <span class="user-name">Admin</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="profile.html" class="dropdown-item">
+                                    <i class="fas fa-user"></i>
+                                    Perfil
+                                </a>
+                                <a href="settings.html" class="dropdown-item">
+                                    <i class="fas fa-cog"></i>
+                                    Configuración
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="login.html" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Cerrar sesión
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenido de Proveedores -->
+            <div class="dashboard-content">
+                <div class="action-bar">
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="addSupplierBtn"
+                            onclick="location.href='add-suppliers.html'">
+                            <i class="fas fa-plus"></i>
+                            Añadir Nuevo Proveedor
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            Exportar
+                        </button>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar proveedores..." class="input">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tabla de Proveedores -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Lista de Proveedores</h3>
+                        <p>Gestiona tus proveedores de productos</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del Proveedor</th>
+                                        <th>Persona de Contacto</th>
+                                        <th>Email</th>
+                                        <th>Teléfono</th>
+                                        <th>Dirección</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>DC Comics Distribution</td>
+                                        <td>John Smith</td>
+                                        <td>john.smith@dccomics.com</td>
+                                        <td>(212) 555-1234</td>
+                                        <td>1700 Broadway, New York, NY 10019</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <a href="detail-suppliers.html" class="action-btn" title="Ver">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="edit-suppliers.html" class="action-btn" title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button class="action-btn" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marvel Distribution</td>
+                                        <td>Jane Doe</td>
+                                        <td>jane.doe@marvel.com</td>
+                                        <td>(212) 576-4000</td>
+                                        <td>10 E 40th St, New York, NY 10016</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <a href="detail-suppliers.html" class="action-btn" title="Ver">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="edit-suppliers.html" class="action-btn" title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button class="action-btn" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Collectibles Inc.</td>
+                                        <td>Robert Johnson</td>
+                                        <td>robert@collectibles.com</td>
+                                        <td>(415) 555-6789</td>
+                                        <td>123 Market St, San Francisco, CA 94105</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <a href="detail-suppliers.html" class="action-btn" title="Ver">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="edit-suppliers.html" class="action-btn" title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button class="action-btn" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manga Imports</td>
+                                        <td>Yuki Tanaka</td>
+                                        <td>yuki@mangaimports.com</td>
+                                        <td>(310) 555-9876</td>
+                                        <td>456 Anime Blvd, Los Angeles, CA 90001</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <a href="detail-suppliers.html" class="action-btn" title="Ver">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="edit-suppliers.html" class="action-btn" title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button class="action-btn" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Indie Comics Supply</td>
+                                        <td>Alex Rivera</td>
+                                        <td>alex@indiecomics.com</td>
+                                        <td>(503) 555-4321</td>
+                                        <td>789 Independent Ave, Portland, OR 97205</td>
+                                        <td><span class="badge bg-warning">Inactivo</span></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <a href="detail-suppliers.html" class="action-btn" title="Ver">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="edit-suppliers.html" class="action-btn" title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button class="action-btn" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/admin/main.js"></script>
+    <script src="../js/admin/suppliers.js"></script>
+</body>
+
+</html>

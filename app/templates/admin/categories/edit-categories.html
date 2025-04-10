@@ -1,0 +1,35 @@
+<form id="editCategoryForm" method="POST" action="{{ url_for('admin_categories_edit', id=category.id_categoria) }}">
+    <div class="form-group">
+        <label for="editCategoryName">Nombre de Categoría</label>
+        <input type="text" id="editCategoryName" name="name" placeholder="Nombre de la categoría" value="{{ category.nombre }}" required>
+    </div>
+    <div class="form-group">
+        <label for="editCategoryDescription">Descripción</label>
+        <textarea id="editCategoryDescription" name="description" placeholder="Descripción de la categoría" rows="3">{{ category.descripcion or '' }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="editCategoryIcon">Ícono</label>
+        <select id="editCategoryIcon" name="icon">
+            <option value="fas fa-mask" {% if category.icono == 'fas fa-mask' %}selected{% endif %}>Máscara (Superhéroe)</option>
+            <option value="fas fa-book-open" {% if category.icono == 'fas fa-book-open' %}selected{% endif %}>Libro abierto (Manga)</option>
+            <option value="fas fa-pencil-alt" {% if category.icono == 'fas fa-pencil-alt' %}selected{% endif %}>Lápiz (Indie)</option>
+            <option value="fas fa-book" {% if category.icono == 'fas fa-book' %}selected{% endif %}>Libro (Novelas Gráficas)</option>
+            <option value="fas fa-trophy" {% if category.icono == 'fas fa-trophy' %}selected{% endif %}>Trofeo (Coleccionables)</option>
+            <option value="fas fa-star" {% if category.icono == 'fas fa-star' %}selected{% endif %}>Estrella</option>
+            <option value="fas fa-fire" {% if category.icono == 'fas fa-fire' %}selected{% endif %}>Fuego</option>
+            <option value="fas fa-heart" {% if category.icono == 'fas fa-heart' %}selected{% endif %}>Corazón</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="editCategoryStatus">Estado</label>
+        <select id="editCategoryStatus" name="status">
+            {% for status in statuses %}
+            <option value="{{ status.id_estatus }}" {% if category.estatus == status.id_estatus %}selected{% endif %}>{{ status.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <button type="button" class="btn btn-outline" onclick="window.history.back()">Cancelar</button>
+    </div>
+</form>

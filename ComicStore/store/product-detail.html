@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalles del Producto - Tienda de Cómics</title>
+<link rel="stylesheet" href="../css/store/styles.css">
+<link rel="stylesheet" href="../css/store/product-detail.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Cabecera -->
+<header class="header">
+    <!-- ... (mismo contenido que en index.html) ... -->
+</header>
+
+<!-- Menú Móvil (oculto por defecto) -->
+<div class="mobile-menu">
+    <!-- ... (mismo contenido que en index.html) ... -->
+</div>
+
+<!-- Cabecera de Página -->
+<div class="page-header">
+    <div class="container">
+        <h1>Detalles del Producto</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <a href="comics.html">Cómics</a>
+            <span>/</span>
+            <span>Batman: El Regreso del Caballero Oscuro</span>
+        </div>
+    </div>
+</div>
+
+<!-- Contenido Principal -->
+<main class="product-detail-section">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-images">
+                <div class="main-image">
+                    <img src="../img/products/batman-large.jpg" alt="Batman: El Regreso del Caballero Oscuro" id="mainImage">
+                </div>
+                <div class="thumbnail-images">
+                    <img src="../img/products/batman-thumb1.jpg" alt="Miniatura 1" class="thumbnail active" data-image="../img/products/batman-large.jpg">
+                    <img src="../img/products/batman-thumb2.jpg" alt="Miniatura 2" class="thumbnail" data-image="../img/products/batman-large2.jpg">
+                    <img src="../img/products/batman-thumb3.jpg" alt="Miniatura 3" class="thumbnail" data-image="../img/products/batman-large3.jpg">
+                </div>
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Batman: El Regreso del Caballero Oscuro</h2>
+                <div class="product-meta">
+                    <span class="product-author">por Frank Miller</span>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5 - 128 reseñas)</span>
+                    </div>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">€19.99</span>
+                    <span class="old-price">€24.99</span>
+                    <span class="discount">20% de descuento</span>
+                </div>
+                <p class="product-description">
+                    Esta obra maestra de la narrativa gráfica regresa a los días oscuros de Gotham City, donde Batman debe enfrentarse a un mundo que lo ha olvidado y a nuevas amenazas que ponen a prueba sus habilidades y determinación.
+                </p>
+                <div class="product-details">
+                    <p><strong>Editorial:</strong> DC Comics</p>
+                    <p><strong>Fecha de publicación:</strong> 1986 (Edición original)</p>
+                    <p><strong>Páginas:</strong> 224</p>
+                    <p><strong>Idioma:</strong> Español</p>
+                    <p><strong>ISBN:</strong> 978-1563893421</p>
+                </div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" value="1" min="1" max="10" class="quantity-input">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="btn btn-primary add-to-cart" data-id="1">
+                        <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+                    </button>
+                    <button class="btn btn-outline add-to-wishlist">
+                        <i class="fas fa-heart"></i> Añadir a Favoritos
+                    </button>
+                </div>
+                <div class="product-meta">
+                    <p><strong>Categoría:</strong> <a href="comics.html">Cómics</a></p>
+                    <p><strong>Etiquetas:</strong> <a href="#">Batman</a>, <a href="#">DC Comics</a>, <a href="#">Superhéroes</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pestañas de Información Adicional -->
+        <div class="product-tabs">
+            <div class="tab-header">
+                <button class="tab-btn active" data-tab="description">Descripción</button>
+                <button class="tab-btn" data-tab="additional-info">Información Adicional</button>
+                <button class="tab-btn" data-tab="reviews">Reseñas (128)</button>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="description">
+                    <h3>Descripción del Producto</h3>
+                    <p>Batman: El Regreso del Caballero Oscuro es una novela gráfica de Batman de Frank Miller, publicada por primera vez en 1986. Es ampliamente considerada como una de las historias más influyentes de Batman y ha tenido un impacto duradero en el género de los cómics de superhéroes.</p>
+                    <p>La historia se desarrolla en un futuro distópico donde Bruce Wayne, de 55 años, ha abandonado su papel como Batman durante una década. Gotham City se ha sumido en el caos y la criminalidad, lo que lleva a Wayne a volver a ponerse la capa y la capucha. A medida que Batman regresa a la acción, se enfrenta a viejos enemigos y nuevas amenazas, incluido un gobierno autoritario que ve a los vigilantes como una amenaza.</p>
+                    <p>Esta edición incluye la historia completa, arte restaurado y material adicional que ofrece una visión del proceso creativo detrás de esta obra maestra del cómic.</p>
+                </div>
+                <div class="tab-pane" id="additional-info">
+                    <h3>Información Adicional</h3>
+                    <table class="additional-info-table">
+                        <tr>
+                            <th>Peso</th>
+                            <td>0.5 kg</td>
+                        </tr>
+                        <tr>
+                            <th>Dimensiones</th>
+                            <td>26 x 17 x 1.5 cm</td>
+                        </tr>
+                        <tr>
+                            <th>Formato</th>
+                            <td>Tapa dura</td>
+                        </tr>
+                        <tr>
+                            <th>Edad recomendada</th>
+                            <td>16+</td>
+                        </tr>
+                        <tr>
+                            <th>Primera edición</th>
+                            <td>1986</td>
+                        </tr>
+                        <tr>
+                            <th>Reedición actual</th>
+                            <td>2024</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="reviews">
+                    <h3>Reseñas de Clientes</h3>
+                    <div class="review-summary">
+                        <div class="average-rating">
+                            <span class="rating">4.5</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>Basado en 128 reseñas</span>
+                        </div>
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <span>5 estrellas</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 70%;"></div>
+                                </div>
+                                <span>70%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>4 estrellas</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 20%;"></div>
+                                </div>
+                                <span>20%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>3 estrellas</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 7%;"></div>
+                                </div>
+                                <span>7%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>2 estrellas</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 2%;"></div>
+                                </div>
+                                <span>2%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>1 estrella</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 1%;"></div>
+                                </div>
+                                <span>1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customer-reviews">
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="reviewer-name">María G.</span>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-date">Publicado el 15 de marzo, 2025</p>
+                            <p class="review-content">Una obra maestra absoluta. Miller reinventa a Batman de una manera oscura y madura que cambió para siempre la forma en que vemos a los superhéroes. La narrativa es intensa y el arte es impresionante. Un must-have para cualquier fan de los cómics.</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="reviewer-name">Carlos R.</span>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-date">Publicado el 2 de febrero, 2025</p>
+                            <p class="review-content">Una historia fascinante que explora la psique de Batman como nunca antes. El arte puede ser un poco áspero a veces, pero encaja perfectamente con el tono de la historia. Mi única queja es que algunas partes pueden ser un poco confusas para los nuevos lectores.</p>
+                        </div>
+                        <!-- Más reseñas aquí -->
+                    </div>
+                    <div class="write-review">
+                        <h4>Escribe una Reseña</h4>
+                        <form id="reviewForm">
+                            <div class="form-group">
+                                <label for="rating">Tu Calificación</label>
+                                <div class="star-rating">
+                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewTitle">Título de la Reseña</label>
+                                <input type="text" id="reviewTitle" name="reviewTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewContent">Tu Reseña</label>
+                                <textarea id="reviewContent" name="reviewContent" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Reseña</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Productos Relacionados -->
+        <section class="related-products">
+            <h2>Productos Relacionados</h2>
+            <div class="products-grid">
+                <!-- Producto Relacionado 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../img/products/batman-year-one.jpg" alt="Batman: Año Uno">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="2">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="action-btn add-to-wishlist" data-id="2">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="action-btn quick-view" data-id="2">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">DC Comics</div>
+                        <h3 class="product-title">Batman: Año Uno</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(18)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">€16.99</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto Relacionado 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../img/products/dark-knight-returns.jpg" alt="Batman: The Dark Knight Returns">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="3">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="action-btn add-to-wishlist" data-id="3">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="action-btn quick-view" data-id="3">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">DC Comics</div>
+                        <h3 class="product-title">Batman: The Dark Knight Returns</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(25)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">€18.99</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Más productos relacionados aquí -->
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Pie de Página -->
+<footer class="footer">
+    <!-- ... (mismo contenido que en index.html) ... -->
+</footer>
+
+<script src="../js/store/main.js"></script>
+<script src="../js/store/product-detail.js"></script>
+</body>
+</html>
+

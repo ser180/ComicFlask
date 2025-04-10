@@ -1,0 +1,35 @@
+<form id="addCategoryForm" method="POST" action="{{ url_for('admin_categories_add') }}">
+    <div class="form-group">
+        <label for="addCategoryName">Nombre de Categoría</label>
+        <input type="text" id="addCategoryName" name="name" placeholder="Nombre de la categoría" required>
+    </div>
+    <div class="form-group">
+        <label for="addCategoryDescription">Descripción</label>
+        <textarea id="addCategoryDescription" name="description" placeholder="Descripción de la categoría" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="addCategoryIcon">Ícono</label>
+        <select id="addCategoryIcon" name="icon">
+            <option value="fas fa-mask">Máscara (Superhéroe)</option>
+            <option value="fas fa-book-open">Libro abierto (Manga)</option>
+            <option value="fas fa-pencil-alt">Lápiz (Indie)</option>
+            <option value="fas fa-book">Libro (Novelas Gráficas)</option>
+            <option value="fas fa-trophy">Trofeo (Coleccionables)</option>
+            <option value="fas fa-star">Estrella</option>
+            <option value="fas fa-fire">Fuego</option>
+            <option value="fas fa-heart">Corazón</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="addCategoryStatus">Estado</label>
+        <select id="addCategoryStatus" name="status">
+            {% for status in statuses %}
+            <option value="{{ status.id_estatus }}">{{ status.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Añadir Categoría</button>
+        <button type="button" class="btn btn-outline" onclick="window.history.back()">Cancelar</button>
+    </div>
+</form>

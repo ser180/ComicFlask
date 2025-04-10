@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Categoría - Comic Store</title>
+    <link rel="stylesheet" href="../css/store/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1>Editar Categoría</h1>
+            <form id="editCategoryForm">
+                <div class="form-group">
+                    <label for="editCategoryName">Nombre de Categoría</label>
+                    <input type="text" id="editCategoryName" placeholder="Nombre de la categoría" required>
+                </div>
+                <div class="form-group">
+                    <label for="editCategoryDescription">Descripción</label>
+                    <textarea id="editCategoryDescription" placeholder="Descripción de la categoría" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editCategoryIcon">Ícono</label>
+                    <select id="editCategoryIcon">
+                        <option value="fas fa-mask">Máscara (Superhéroe)</option>
+                        <option value="fas fa-book-open">Libro abierto (Manga)</option>
+                        <option value="fas fa-pencil-alt">Lápiz (Indie)</option>
+                        <option value="fas fa-book">Libro (Novelas Gráficas)</option>
+                        <option value="fas fa-trophy">Trofeo (Coleccionables)</option>
+                        <option value="fas fa-star">Estrella</option>
+                        <option value="fas fa-fire">Fuego</option>
+                        <option value="fas fa-heart">Corazón</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="editCategoryActive">
+                        <label for="editCategoryActive">Activo</label>
+                    </div>
+                </div>
+                <input type="hidden" id="editCategoryId">
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-outline" onclick="window.history.back()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <!-- Código del pie de página de index.html -->
+    </footer>
+    <script src="../js/store/main.js"></script>
+</body>
+
+</html>

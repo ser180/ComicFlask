@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Cómics - Bienvenido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo de Tienda de Cómics" class="logo">
+            <h1>Sistema de Gestión de Tienda de Cómics</h1>
+        </div>
+        <div class="welcome-cards">
+            <div class="welcome-card admin-card">
+                <div class="card-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2>Panel de Administración</h2>
+                <p>Gestiona inventario, pedidos, clientes y más</p>
+                <a href="{{ url_for('admin_login') }}" class="btn btn-primary">Acceso Administrador</a>
+            </div>
+            <div class="welcome-card client-card">
+                <div class="card-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2>Panel de Cliente</h2>
+                <p>Explora cómics, realiza pedidos y más</p>
+                <a href="{{ url_for('cliente_login') }}" class="btn btn-primary">Acceso Cliente</a>
+            </div>
+        </div>
+        
+        <div class="welcome-footer">
+            <p>&copy; 2025 Sistema de Gestión de Tienda de Cómics</p>
+        </div>
+    </div>
+</body>
+</html>
+

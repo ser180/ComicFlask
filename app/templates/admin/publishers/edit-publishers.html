@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Editorial - Comic Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/store/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1>Editar Editorial</h1>
+            <form id="publisherForm">
+                <div class="form-group">
+                    <label for="publisherName">Nombre de la Editorial</label>
+                    <input type="text" id="publisherName" placeholder="Nombre de la editorial" required>
+                </div>
+                <div class="form-group">
+                    <label for="publisherCountry">País</label>
+                    <input type="text" id="publisherCountry" placeholder="País">
+                </div>
+                <div class="form-group">
+                    <label for="publisherWebsite">Sitio Web</label>
+                    <input type="url" id="publisherWebsite" placeholder="URL del sitio web">
+                </div>
+                <div class="form-group">
+                    <label for="publisherLogo">Logo</label>
+                    <input type="file" id="publisherLogo">
+                </div>
+                <div class="form-group">
+                    <label for="publisherDescription">Descripción</label>
+                    <textarea id="publisherDescription" placeholder="Descripción de la editorial" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="publisherActive" checked>
+                        <label for="publisherActive">Activo</label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-outline" onclick="window.history.back()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <!-- Código del pie de página de index.html -->
+    </footer>
+    <script src="{{ url_for('static', filename='js/store/main.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Novels - Comic Store</title>
+  <link rel="stylesheet" href="../css/store/styles.css">
+  <link rel="stylesheet" href="../css/store/comics.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+      <div class="header-container">
+          <div class="header-left">
+              <a href="index.html" class="logo">
+                  <img src="../img/logo.png" alt="Comic Store Logo">
+                  <span>Tienda de Cómics</span>
+              </a>
+              <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="comics.html">Cómics</a></li>
+                    <li><a href="graphic-novels.html" class="active">Novelas Gráficas</a></li>
+                </ul>
+            </nav>
+          </div>
+          <div class="header-right">
+              <div class="search-bar">
+                  <input type="text" placeholder="Search for graphic novels, authors...">
+                  <button><i class="fas fa-search"></i></button>
+              </div>
+              <div class="header-actions">
+                <a href="login.html" class="header-action">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Iniciar Sesión</span>
+                </a>
+                <a href="wishlist.html" class="header-action">
+                    <i class="fas fa-heart"></i>
+                    <span>Favoritos</span>
+                </a>
+                <a href="cart.html" class="header-action cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrito</span>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu">
+      <div class="mobile-menu-header">
+          <div class="logo">
+              <img src="../img/logo.png" alt="Comic Store Logo">
+              <span>Comic Store</span>
+          </div>
+          <button class="mobile-menu-close">
+              <i class="fas fa-times"></i>
+          </button>
+      </div>
+      <div class="mobile-search">
+          <input type="text" placeholder="Search for graphic novels, authors...">
+          <button><i class="fas fa-search"></i></button>
+      </div>
+      <nav class="mobile-nav">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="comics.html">Comics</a></li>
+              <li><a href="graphic-novels.html" class="active">Graphic Novels</a></li>
+              <li><a href="collectibles.html">Collectibles</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
+      <div class="mobile-actions">
+          <a href="account.html" class="mobile-action">
+              <i class="fas fa-user"></i>
+              <span>Account</span>
+          </a>
+          <a href="wishlist.html" class="mobile-action">
+              <i class="fas fa-heart"></i>
+              <span>Wishlist</span>
+          </a>
+          <a href="cart.html" class="mobile-action">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Cart</span>
+          </a>
+      </div>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+      <div class="container">
+          <h1>Graphic Novels</h1>
+          <div class="breadcrumb">
+              <a href="index.html">Home</a>
+              <span>/</span>
+              <span>Graphic Novels</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- Graphic Novels Content -->
+  <section class="comics-section">
+      <div class="container">
+          <div class="comics-container">
+              <!-- Sidebar Filters -->
+              <div class="comics-sidebar">
+                  <div class="filter-section">
+                      <h3>Categories</h3>
+                      <ul class="filter-list">
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox" checked>
+                                  <span class="checkmark"></span>
+                                  <span>All Graphic Novels</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Superhero</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Sci-Fi</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Horror</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Fantasy</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Memoir</span>
+                              </label>
+                          </li>
+                      </ul>
+                  </div>
+                  
+                  <div class="filter-section">
+                      <h3>Publishers</h3>
+                      <ul class="filter-list">
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>DC Comics</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Marvel</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Image Comics</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Dark Horse</span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span>Vertigo</span>
+                              </label>
+                          </li>
+                      </ul>
+                  </div>
+                  
+                  <div class="filter-section">
+                      <h3>Price Range</h3>
+                      <div class="price-range">
+                          <div class="price-inputs">
+                              <input type="number" placeholder="Min" min="0">
+                              <span>-</span>
+                              <input type="number" placeholder="Max" min="0">
+                          </div>
+                          <button class="btn btn-outline btn-sm">Apply</button>
+                      </div>
+                  </div>
+                  
+                  <div class="filter-section">
+                      <h3>Rating</h3>
+                      <ul class="filter-list">
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                  </span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </span>
+                              </label>
+                          </li>
+                          <li>
+                              <label class="checkbox-container">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                  <span class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </span>
+                              </label>
+                          </li>
+                      </ul>
+                  </div>
+                  
+                  <button class="btn btn-primary filter-apply-btn">Apply Filters</button>
+                  <button class="btn btn-outline filter-reset-btn">Reset Filters</button>
+              </div>
+              
+              <!-- Graphic Novels Grid -->
+              <div class="comics-grid">
+                  <div class="comics-header">
+                      <div class="comics-count">
+                          <span>Showing 1-12 of 42 graphic novels</span>
+                      </div>
+                      <div class="comics-sort">
+                          <label for="sort-by">Sort by:</label>
+                          <select id="sort-by" class="sort-select">
+                              <option value="popularity">Popularity</option>
+                              <option value="newest">Newest</option>
+                              <option value="price-low">Price: Low to High</option>
+                              <option value="price-high">Price: High to Low</option>
+                              <option value="rating">Rating</option>
+                          </select>
+                      </div>
+                  </div>
+                  
+                  <div class="products-grid">
+                      <!-- Product 1 -->
+                      <div class="product-card">
+                          <div class="product-badge bestseller">Bestseller</div>
+                          <div class="product-image">
+                              <img src="../img/products/watchmen.jpg" alt="Watchmen">
+                              <div class="product-actions">
+                                  <button class="action-btn add-to-cart" data-id="6">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </button>
+                                  <button class="action-btn add-to-wishlist" data-id="6">
+                                      <i class="fas fa-heart"></i>
+                                  </button>
+                                  <button class="action-btn quick-view" data-id="6">
+                                      <i class="fas fa-eye"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="product-info">
+                              <div class="product-category">DC Comics</div>
+                              <h3 class="product-title">Watchmen: Deluxe Edition</h3>
+                              <div class="product-rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <span>(47)</span>
+                              </div>
+                              <div class="product-price">
+                                  <span class="current-price">$29.99</span>
+                                  <span class="old-price">$34.99</span>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- Product 2 -->
+                      <div class="product-card">
+                          <div class="product-image">
+                              <img src="../img/products/sandman.jpg" alt="Sandman">
+                              <div class="product-actions">
+                                  <button class="action-btn add-to-cart" data-id="7">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </button>
+                                  <button class="action-btn add-to-wishlist" data-id="7">
+                                      <i class="fas fa-heart"></i>
+                                  </button>
+                                  <button class="action-btn quick-view" data-id="7">
+                                      <i class="fas fa-eye"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="product-info">
+                              <div class="product-category">Vertigo</div>
+                              <h3 class="product-title">Sandman Vol. 1: Preludes & Nocturnes</h3>
+                              <div class="product-rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star-half-alt"></i>
+                                  <span>(38)</span>
+                              </div>
+                              <div class="product-price">
+                                  <span class="current-price">$19.99</span>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- Product 3 -->
+                      <div class="product-card">
+                          <div class="product-badge new">New</div>
+                          <div class="product-image">
+                              <img src="../img/products/saga.jpg" alt="Saga">
+                              <div class="product-actions">
+                                  <button class="action-btn add-to-cart" data-id="8">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </button>
+                                  <button class="action-btn add-to-wishlist" data-id="8">
+                                      <i class="fas fa-heart"></i>
+                                  </button>
+                                  <button class="action-btn quick-view" data-id="8">
+                                      <i class="fas fa-eye"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="product-info">
+                              <div class="product-category">Image Comics</div>
+                              <h3 class="product-title">Saga: Compendium One</h3>
+                              <div class="product-rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <span>(52)</span>
+                              </div>
+                              <div class="product-price">
+                                  <span class="current-price">$59.99</span>
+                                  <span class="old-price">$64.99</span>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- Product 4 -->
+                      <div class="product-card">
+                          <div class="product-image">
+                              <img src="../img/products/maus.jpg" alt="Maus">
+                              <div class="product-actions">
+                                  <button class="action-btn add-to-cart" data-id="9">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </button>
+                                  <button class="action-btn add-to-wishlist" data-id="9">
+                                      <i class="fas fa-heart"></i>
+                                  </button>
+                                  <button class="action-btn quick-view" data-id="9">
+                                      <i class="fas fa-eye"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="product-info">
+                              <div class="product-category">Pantheon Books</div>
+                              <h3 class="product-title">Maus: A Survivor's Tale</h3>
+                              <div class="product-rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <span>(64)</span>
+                              </div>
+                              <div class="product-price">
+                                  <span class="current-price">$35.00</span>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- Product 5 -->
+                      <div class="product-card">
+                          <div class="product-badge sale">Sale</div>
+                          <div class="product-image">
+                              <img src="../img/products/preacher.jpg" alt="Preacher">
+                              <div class="product-actions">
+                                  <button class="action-btn add-to-cart" data-id="10">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </button>
+                                  <button class="action-btn add-to-wishlist" data-id="10">
+                                      <i class="fas fa-heart"></i>
+                                  </button>
+                                  <button class="action-btn quick-view" data-id="10">
+                                      <i class="fas fa-eye"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="product-info">
+                              <div class="product-category">Vertigo</div>
+                              <h3 class="product-title">Preacher: Book One</h3>
+                              <div class="product-rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="far fa-star"></i>
+                                  <span>(29)</span>
+                              </div>
+                              <div class="product-price">
+                                  <span class="current-price">$19.99</span>
+                                  <span class="old-price">$24.99</span>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- Product 6 -->
+                      <div class="product-card">
+                          <div class="product-image">
+                              <img src="../img/products/v-for-vendetta.jpg" alt="V for Vendetta">
+                              <div class="product-actions">
+                                  <button class="action-btn add-to-cart" data-id="11">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </button>
+                                  <button class="action-btn add-to-wishlist" data-id="11">
+                                      <i class="fas fa-heart"></i>
+                                  </button>
+                                  <button class="action-btn quick-view" data-id="11">
+                                      <i class="fas fa-eye"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="product-info">
+                              <div class="product-category">Vertigo</div>
+                              <h3 class="product-title">V for Vendetta</h3>
+                              <div class="product-rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star-half-alt"></i>
+                                  <span>(41)</span>
+                              </div>
+                              <div class="product-price">
+                                  <span class="current-price">$19.99</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Pagination -->
+                  <div class="pagination">
+                      <a href="#" class="pagination-item active">1</a>
+                      <a href="#" class="pagination-item">2</a>
+                      <a href="#" class="pagination-item">3</a>
+                      <a href="#" class="pagination-item next">
+                          <i class="fas fa-chevron-right"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="../img/logo.png" alt="Logo de Tienda de Cómics">
+                    <span>Tienda de Cómics</span>
+                </div>
+                <p class="footer-description">Tu tienda única para cómics, novelas gráficas y coleccionables.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Tienda</h3>
+                <ul class="footer-links">
+                    <li><a href="comics.html">Cómics</a></li>
+                    <li><a href="graphic-novels.html">Novelas Gráficas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Cuenta</h3>
+                <ul class="footer-links">
+                    <li><a href="account.html">Mi Cuenta</a></li>
+                    <li><a href="wishlist.html">Lista de Deseos</a></li>
+                    <li><a href="cart.html">Carrito</a></li>
+                </ul>
+            </div>
+            
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Calle Cómic, Metrópolis, NY 10001</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>(123) 456-7890</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@tiendacomics.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Lun-Sáb: 9:00 AM - 8:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 Tienda de Cómics. Todos los derechos reservados.</p>
+            <div class="payment-methods">
+                <span>Aceptamos:</span>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Quick View Modal (hidden by default) -->
+  <div class="modal" id="quickViewModal">
+      <div class="modal-content">
+          <button class="modal-close">
+              <i class="fas fa-times"></i>
+          </button>
+          <div class="product-quick-view">
+              <div class="product-images">
+                  <div class="main-image">
+                      <img src="../img/products/watchmen.jpg" alt="Product" id="quickViewImage">
+                  </div>
+              </div>
+              <div class="product-details">
+                  <h2 id="quickViewTitle">Product Title</h2>
+                  <div class="product-rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                      <span id="quickViewRating">(24)</span>
+                  </div>
+                  <div class="product-price">
+                      <span class="current-price" id="quickViewPrice">$19.99</span>
+                      <span class="old-price" id="quickViewOldPrice">$24.99</span>
+                  </div>
+                  <div class="product-description">
+                      <p id="quickViewDescription">Product description will be displayed here.</p>
+                  </div>
+                  <div class="product-meta">
+                      <div class="meta-item">
+                          <span class="meta-label">Category:</span>
+                          <span class="meta-value" id="quickViewCategory">Graphic Novels</span>
+                      </div>
+                      <div class="meta-item">
+                          <span class="meta-label">Publisher:</span>
+                          <span class="meta-value" id="quickViewPublisher">DC Comics</span>
+                      </div>
+                      <div class="meta-item">
+                          <span class="meta-label">Availability:</span>
+                          <span class="meta-value in-stock" id="quickViewStock">In Stock</span>
+                      </div>
+                  </div>
+                  <div class="product-actions">
+                      <div class="quantity-selector">
+                          <button class="quantity-btn minus">-</button>
+                          <input type="number" value="1" min="1" class="quantity-input">
+                          <button class="quantity-btn plus">+</button>
+                      </div>
+                      <button class="btn btn-primary add-to-cart-btn" id="quickViewAddToCart">
+                          <i class="fas fa-shopping-cart"></i> Add to Cart
+                      </button>
+                      <button class="btn btn-outline wishlist-btn" id="quickViewAddToWishlist">
+                          <i class="fas fa-heart"></i> Add to Wishlist
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script src="../js/store/main.js"></script>
+  <script src="../js/store/graphic-novels.js"></script>
+</body>
+</html>
+

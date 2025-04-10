@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Orden - Comic Store</title>
+    <link rel="stylesheet" href="../css/store/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1>Editar Orden</h1>
+            <form id="editOrderForm">
+                <div class="form-group">
+                    <label for="orderId">Codigo de Orden</label>
+                    <input type="text" id="orderId" name="orderId" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="customer">Cliente</label>
+                    <input type="text" id="customer" name="customer" required>
+                </div>
+                <div class="form-group">
+                    <label for="items">Artículos</label>
+                    <textarea id="items" name="items" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="total">Total</label>
+                    <input type="number" id="total" name="total" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Actualizar Orden</button>
+                    <button type="button" class="btn btn-outline" onclick="window.history.back()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <!-- Código del pie de página de index.html -->
+    </footer>
+    <script src="../js/store/main.js"></script>
+</body>
+
+</html>

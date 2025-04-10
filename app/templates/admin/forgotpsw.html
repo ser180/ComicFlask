@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olvidé mi contraseña - Tienda de Cómics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo de Tienda de Cómics" class="logo">
+                <h1>Restablecer Contraseña</h1>
+                <p>Ingresa tu correo electrónico para restablecer tu contraseña</p>
+            </div>
+
+            <form id="resetForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="admin@example.com" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Restablecer contraseña</button>
+
+                <div class="login-footer">
+                    <a href="{{ url_for('admin_login') }}" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Volver al inicio de sesión
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/admin/login.js') }}"></script>
+</body>
+
+</html>

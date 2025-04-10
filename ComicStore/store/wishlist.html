@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Deseos - Tienda de Cómics</title>
+<link rel="stylesheet" href="../css/store/styles.css">
+<link rel="stylesheet" href="../css/store/wishlist.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Cabecera -->
+<header class="header">
+    <!-- ... (mismo contenido que en index.html) ... -->
+</header>
+
+<!-- Menú Móvil (oculto por defecto) -->
+<div class="mobile-menu">
+    <!-- ... (mismo contenido que en index.html) ... -->
+</div>
+
+<!-- Cabecera de Página -->
+<div class="page-header">
+    <div class="container">
+        <h1>Mi Lista de Deseos</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <span>Lista de Deseos</span>
+        </div>
+    </div>
+</div>
+
+<!-- Contenido Principal -->
+<main class="wishlist-section">
+    <div class="container">
+        <div class="wishlist-container" id="wishlistContainer">
+            <!-- Los items de la lista de deseos se cargarán dinámicamente aquí -->
+        </div>
+        <div class="empty-wishlist" id="emptyWishlist" style="display: none;">
+            <i class="fas fa-heart-broken"></i>
+            <h2>Tu lista de deseos está vacía</h2>
+            <p>Añade productos a tu lista de deseos mientras exploras nuestra tienda.</p>
+            <a href="comics.html" class="btn btn-primary">Explorar Cómics</a>
+        </div>
+    </div>
+</main>
+<br><br>
+<!-- Pie de Página -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="../img/logo.png" alt="Logo de Tienda de Cómics">
+                    <span>Tienda de Cómics</span>
+                </div>
+                <p class="footer-description">Tu tienda única para cómics, novelas gráficas y coleccionables.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Tienda</h3>
+                <ul class="footer-links">
+                    <li><a href="comics.html">Cómics</a></li>
+                    <li><a href="graphic-novels.html">Novelas Gráficas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Cuenta</h3>
+                <ul class="footer-links">
+                    <li><a href="account.html">Mi Cuenta</a></li>
+                    <li><a href="wishlist.html">Lista de Deseos</a></li>
+                    <li><a href="cart.html">Carrito</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-column">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Calle Cómic, Metrópolis, NY 10001</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>(123) 456-7890</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@tiendacomics.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Lun-Sáb: 9:00 AM - 8:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 Tienda de Cómics. Todos los derechos reservados.</p>
+            <div class="payment-methods">
+                <span>Aceptamos:</span>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const wishlistContainer = document.getElementById('wishlistContainer');
+        const emptyWishlist = document.getElementById('emptyWishlist');
+
+        // Obtener la lista de deseos del almacenamiento local
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        // Función para renderizar la lista de deseos
+        function renderWishlist() {
+            wishlistContainer.innerHTML = '';
+            if (wishlist.length === 0) {
+                emptyWishlist.style.display = 'block';
+                return;
+            }
+            emptyWishlist.style.display = 'none';
+            wishlist.forEach(item => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('wishlist-item');
+                productElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="wishlist-item-image">
+                    <div class="wishlist-item-details">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                        <span class="wishlist-item-price">${item.price}</span>
+                        <button class="btn btn-danger remove-wishlist-item" data-id="${item.id}">Eliminar</button>
+                    </div>
+                `;
+                wishlistContainer.appendChild(productElement);
+            });
+        }
+
+        // Función para eliminar un producto de la lista de deseos
+        function removeFromWishlist(productId) {
+            const updatedWishlist = wishlist.filter(item => item.id !== productId);
+            localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+            renderWishlist();
+        }
+
+        // Evento para manejar la eliminación de productos
+        wishlistContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-wishlist-item')) {
+                const productId = e.target.getAttribute('data-id');
+                removeFromWishlist(productId);
+            }
+        });
+
+        // Renderizar la lista de deseos al cargar la página
+        renderWishlist();
+    });
+</script>
+</body>
+</html>
+

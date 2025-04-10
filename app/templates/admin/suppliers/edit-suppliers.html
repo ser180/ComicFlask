@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Proveedor - Comic Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/store/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1>Editar Proveedor</h1>
+            <form id="editSupplierForm" method="POST" action="{{ url_for('admin.update_supplier') }}">
+                <div class="form-group">
+                    <label for="editSupplierName">Nombre del Proveedor</label>
+                    <input type="text" id="editSupplierName" value="DC Comics Distribution" required>
+                </div>
+                <div class="form-group">
+                    <label for="editContactPerson">Persona de Contacto</label>
+                    <input type="text" id="editContactPerson" value="John Smith">
+                </div>
+                <div class="form-group">
+                    <label for="editSupplierEmail">Email</label>
+                    <input type="email" id="editSupplierEmail" value="john.smith@dccomics.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="editSupplierPhone">Teléfono</label>
+                    <input type="tel" id="editSupplierPhone" value="(212) 555-1234">
+                </div>
+                <div class="form-group">
+                    <label for="editSupplierAddress">Dirección</label>
+                    <textarea id="editSupplierAddress" rows="3">1700 Broadway, New York, NY 10019</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editSupplierNotes">Notas</label>
+                    <textarea id="editSupplierNotes" rows="3">Proveedor confiable para cómics de DC.</textarea>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="editSupplierActive" checked>
+                        <label for="editSupplierActive">Activo</label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-outline" onclick="window.history.back()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <!-- Código del pie de página de index.html -->
+    </footer>
+    <script src="{{ url_for('static', filename='js/store/main.js') }}"></script>
+</body>
+
+</html>

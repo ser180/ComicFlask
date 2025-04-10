@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Orden de Suministro - Comic Store</title>
+    <link rel="stylesheet" href="../css/admin/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1>Añadir Nueva Orden de Suministro</h1>
+            <form id="orderForm">
+                <div class="modal-body">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="supplier">Proveedor</label>
+                            <select id="supplier" class="select" required>
+                                <option value="">Seleccionar proveedor</option>
+                                <option value="DC Comics Distribution">DC Comics Distribution</option>
+                                <option value="Marvel Distribution">Marvel Distribution</option>
+                                <option value="Collectibles Inc.">Collectibles Inc.</option>
+                                <option value="Manga Imports">Manga Imports</option>
+                                <option value="Indie Comics Supply">Indie Comics Supply</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="orderDate">Fecha de la Orden</label>
+                            <input type="date" id="orderDate" class="input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expectedDelivery">Entrega Esperada</label>
+                            <input type="date" id="expectedDelivery" class="input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Estado</label>
+                            <select id="status" class="select" required>
+                                <option value="pending">Pendiente</option>
+                                <option value="ordered">Ordenado</option>
+                                <option value="transit">En Tránsito</option>
+                                <option value="delivered">Entregado</option>
+                                <option value="canceled">Cancelado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h4 class="section-title">Artículos de la Orden</h4>
+                    <div id="orderItems">
+                        <div class="order-item">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="product1">Producto</label>
+                                    <select id="product1" class="select product-select" required>
+                                        <option value="">Seleccionar producto</option>
+                                        <option value="Batman: The Dark Knight Returns">Batman: The Dark Knight
+                                            Returns</option>
+                                        <option value="Spider-Man: Miles Morales Vol. 1">Spider-Man: Miles Morales
+                                            Vol. 1</option>
+                                        <option value="Wonder Woman: Year One">Wonder Woman: Year One</option>
+                                        <option value="X-Men: Dark Phoenix Saga">X-Men: Dark Phoenix Saga</option>
+                                        <option value="Iron Man: Extremis">Iron Man: Extremis</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity1">Cantidad</label>
+                                    <input type="number" id="quantity1" class="input quantity-input" min="1" value="1"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price1">Precio Unitario ($)</label>
+                                    <input type="number" id="price1" class="input price-input" min="0" step="0.01" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subtotal1">Subtotal ($)</label>
+                                    <input type="number" id="subtotal1" class="input subtotal-input" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <button type="button" class="btn btn-outline remove-item" style="display: none;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="addItemBtn">
+                            <i class="fas fa-plus"></i> Añadir Artículo
+                        </button>
+                    </div>
+
+                    <div class="order-summary">
+                        <div class="summary-row">
+                            <span>Total de Artículos:</span>
+                            <span id="totalItems">0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Total a Pagar:</span>
+                            <span id="totalAmount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notas</label>
+                        <textarea id="notes" class="textarea"
+                            placeholder="Notas adicionales o intrucciones especiales"></textarea>
+                    </div>
+
+                    <input type="hidden" id="orderId">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Crear Orden</button>
+                    <button type="button" class="btn btn-outline" onclick="window.history.back()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+    </footer>
+    <script src="../js/store/main.js"></script>
+</body>
+
+</html>

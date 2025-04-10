@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membresía - Tienda de Cómics</title>
+    <link rel="stylesheet" href="../css/store/styles.css">
+    <link rel="stylesheet" href="../css/store/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="../img/logo.png" alt="Logo Tienda de Cómics">
+                    <span>Tienda de Cómics</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="comics.html">Cómics</a></li>
+                        <li><a href="graphic-novels.html">Novelas Gráficas</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar cómics, autores...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="account.html" class="header-action"><i class="fas fa-user"></i><span>Cuenta</span></a>
+                    <a href="wishlist.html" class="header-action"><i class="fas fa-heart"></i><span>Favoritos</span></a>
+                    <a href="cart.html" class="header-action cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrito</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cabecera de Página -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Programa de Membresía</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span>/</span>
+                <span>Membresía</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido de Membresía -->
+    <section class="membership-section">
+        <div class="container">
+            <div class="membership-intro">
+                <h2 class="section-title">Descubre todos los beneficios de ser miembro</h2>
+                <p class="section-description">Elige el plan que mejor se adapte a ti y empieza a disfrutar.</p>
+            </div>
+
+            <div class="membership-plans grid gap-4 md:grid-cols-3">
+                <!-- Plan Básico -->
+                <div class="membership-plan card">
+                    <h3 class="plan-title">Plan Básico</h3>
+                    <p class="plan-price">$9.99 <span class="plan-period">/mes</span></p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle text-green-500"></i> 5% de descuento en todas las compras</li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Acceso anticipado a nuevos lanzamientos
+                        </li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Boletín mensual exclusivo</li>
+                    </ul><br>
+                    <button class="btn btn-outline w-full">Seleccionar</button>
+                </div>
+                <br><br>
+                <!-- Plan Premium -->
+                <div class="membership-plan card highlighted">
+                    <div class="plan-badge">Popular</div>
+                    <h3 class="plan-title">Plan Premium</h3>
+                    <p class="plan-price">$19.99 <span class="plan-period">/mes</span></p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle text-green-500"></i> 10% de descuento en todas las compras
+                        </li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Acceso anticipado a nuevos lanzamientos
+                        </li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Boletín mensual exclusivo</li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Envío gratuito en todos los pedidos</li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Regalo sorpresa trimestral</li>
+                    </ul><br>
+                    <button class="btn btn-primary w-full">Seleccionar</button>
+                </div>
+                <br><br>
+                <!-- Plan Coleccionista -->
+                <div class="membership-plan card">
+                    <h3 class="plan-title">Plan Coleccionista</h3>
+                    <p class="plan-price">$29.99 <span class="plan-period">/mes</span></p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle text-green-500"></i> 15% de descuento en todas las compras
+                        </li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Acceso anticipado a nuevos lanzamientos
+                        </li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Boletín mensual exclusivo</li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Envío gratuito</li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Regalos exclusivos y coleccionables</li>
+                        <li><i class="fas fa-check-circle text-green-500"></i> Acceso a eventos especiales</li>
+                    </ul><br>
+                    <button class="btn btn-outline w-full">Seleccionar</button>
+                </div><br><br>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../img/logo.png" alt="Logo de Tienda de Cómics">
+                        <span>Tienda de Cómics</span>
+                    </div>
+                    <p class="footer-description">Tu tienda única para cómics, novelas gráficas y coleccionables.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Tienda</h3>
+                    <ul class="footer-links">
+                        <li><a href="comics.html">Cómics</a></li>
+                        <li><a href="graphic-novels.html">Novelas Gráficas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Cuenta</h3>
+                    <ul class="footer-links">
+                        <li><a href="account.html">Mi Cuenta</a></li>
+                        <li><a href="wishlist.html">Lista de Deseos</a></li>
+                        <li><a href="cart.html">Carrito</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Calle Cómic, Metrópolis, NY 10001</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@tiendacomics.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Sáb: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Tienda de Cómics. Todos los derechos reservados.</p>
+                <div class="payment-methods">
+                    <span>Aceptamos:</span>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/store/main.js"></script>
+</body>
+
+</html>
