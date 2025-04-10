@@ -1,217 +1,60 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "admin/base_admin.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Categorías - Comic Store</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <div class="admin-container">
-        <!-- Barra lateral -->
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="{{ url_for('static', filename='img/minilogo.png') }}" alt="Logo de Comic Store"
-                        class="logo-img">
-                    <span>ComicStore</span>
-                </div>
-                <button class="sidebar-toggle" id="sidebarToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-            <div class="sidebar-content">
-                <nav class="sidebar-menu">
-                    <ul>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_dashboard') }}">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>Panel</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_products') }}">
-                                <i class="fas fa-book"></i>
-                                <span>Productos</span>
-                            </a>
-                        </li>
-                        <li class="menu-item active">
-                            <a href="{{ url_for('admin_categories') }}">
-                                <i class="fas fa-tags"></i>
-                                <span>Categorías</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_publishers') }}">
-                                <i class="fas fa-building"></i>
-                                <span>Editoriales</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_orders') }}">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span>Pedidos</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_customers') }}">
-                                <i class="fas fa-users"></i>
-                                <span>Clientes</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_suppliers') }}">
-                                <i class="fas fa-truck"></i>
-                                <span>Proveedores</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_supply_orders') }}">
-                                <i class="fas fa-boxes"></i>
-                                <span>Órdenes de Suministro</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url_for('admin_users') }}">
-                                <i class="fas fa-user-shield"></i>
-                                <span>Usuarios</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="sidebar-footer">
-                <div class="user-info">
-                    <div class="user-avatar">
-                        <span>AD</span>
-                    </div>
-                    <div class="user-details">
-                        <p class="user-name">Usuario Admin</p>
-                        <p class="user-role">Administrador</p>
-                    </div>
-                </div>
-                <div class="logout-btn">
-                    <a href="{{ url_for('index') }}" title="Cerrar sesión">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
-                </div>
-            </div>
+{% block content %}
+<div class="container-fluid">
+    <h1 class="mt-4">Gestión de Categorías</h1>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table mr-1"></i>
+            Lista de Categorías
+            <a href="{{ url_for('admin_categories_add') }}" class="btn btn-primary float-right">
+                <i class="fas fa-plus"></i> Añadir Categoría
+            </a>
         </div>
-
-        <!-- Contenido Principal -->
-        <div class="main-content">
-            <!-- Encabezado -->
-            <header class="header">
-                <div class="header-left">
-                    <h1 class="page-title">Gestión de Categorías</h1>
-                </div>
-                <div class="header-right">
-                    <div class="header-search">
-                        <input type="text" placeholder="Buscar categorías...">
-                        <button>
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <div class="header-actions">
-                        <button class="notification-btn">
-                            <i class="fas fa-bell"></i>
-                            <span class="badge">3</span>
-                        </button>
-                        <div class="user-dropdown">
-                            <button class="user-dropdown-toggle">
-                                <div class="user-avatar">
-                                    <span>AD</span>
-                                </div>
-                                <span class="user-name">Admin</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a href="{{ url_for('admin_profile') }}" class="dropdown-item">
-                                    <i class="fas fa-user"></i>
-                                    Perfil
-                                </a>
-                                <a href="{{ url_for('admin_settings') }}" class="dropdown-item">
-                                    <i class="fas fa-cog"></i>
-                                    Configuración
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="{{ url_for('index') }}" class="dropdown-item">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                    Cerrar sesión
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Contenido de Categorías -->
-            <div class="dashboard-content">
-                <div class="action-bar">
-                    <div class="action-buttons">
-                        <button class="btn btn-primary" id="addCategoryBtn"
-                            onclick="location.href='{{ url_for('admin_categories_add_categories') }}'">
-                            <i class="fas fa-plus"></i>
-                            Añadir nueva categoría
-                        </button>
-                    </div>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Buscar categorías..." class="input">
-                        <button class="btn btn-outline">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-                <tbody>
-                    {% for category in categories %}
-                    <tr>
-                        <td>
-                            <div class="category-icon">
-                                {% if category.icono %}
-                                <i class="{{ category.icono }}"></i>
-                                {% else %}
-                                <i class="fas fa-tag"></i>
-                                {% endif %}
-                            </div>
-                        </td>
-                        <td>{{ category.nombre }}</td>
-                        <td>{{ category.descripcion or 'Sin descripción' }}</td>
-                        <td>{{ category.cantidad_productos }}</td>
-                        <td>
-                            {% if category.estatus == 1 %}
-                            <span class="badge bg-success">Activo</span>
-                            {% else %}
-                            <span class="badge bg-danger">Inactivo</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            <div class="table-actions">
-                                <a href="{{ url_for('admin_categories_edit', id=category.id_categoria) }}"
-                                    class="action-btn" title="Editar">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Productos</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for categoria in categories %}
+                        <tr>
+                            <td>{{ categoria.nombre }}</td>
+                            <td>{{ categoria.descripcion }}</td>
+                            <td>{{ categoria.cantidad_productos }}</td>
+                            <td>
+                                <span class="badge badge-{{ 'success' if categoria.estatus == 1 else 'secondary' }}">
+                                    {{ 'Activo' if categoria.estatus == 1 else 'Inactivo' }}
+                                </span>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('admin_categories_edit', id=categoria.id_categoria) }}" class="btn btn-sm btn-info">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form action="{{ url_for('admin_categories_delete', id=category.id_categoria) }}"
-                                    method="POST" style="display: inline;">
-                                    <button type="submit" class="action-btn" title="Eliminar"
-                                        onclick="return confirm('¿Estás seguro de eliminar esta categoría?')">
+                                <form action="{{ url_for('admin_categories_delete', id=categoria.id_categoria) }}" method="POST" style="display:inline;">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro?')">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
-                            </div>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-                <script src="{{ url_for('static', filename='js/admin/main.js') }}"></script>
-                <script src="{{ url_for('static', filename='js/admin/categories.js') }}"></script>
-</body>
-
-</html>
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/admin/categories.js') }}"></script>
+{% endblock %}
